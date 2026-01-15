@@ -29,7 +29,9 @@ Modern SIEM systems face several limitations:
 
 This project implements an **Autonomous MCP Server** that:
 
-1. **Ingests SIEM security events** from an Excel dataset
+1. **Ingests SIEM security events** from an Excel dataset which contains IP information like name, attack type, target address
+   <img width="1916" height="276" alt="image" src="https://github.com/user-attachments/assets/fead7216-683a-4c63-abe8-51a099ce5614" />
+
 2. **Builds historical context per IP address**
 3. **Extracts risk indicators** such as:
    - Blocked attempts
@@ -60,19 +62,7 @@ This project implements an **Autonomous MCP Server** that:
 
 ## ⚙️ System Architecture
 
-SIEM Logs (Excel)
-↓
-Context Builder (per IP)
-↓
-Risk Indicator Extraction
-↓
-GenAI Decision Engine (Gemini)
-↓
-Fallback Rule Engine (if needed)
-↓
-Final Decision + Recommendation
-↓
-Reports (JSON / TXT)
+
 
 
 ---
@@ -115,9 +105,10 @@ If AI response fails or is malformed:
 
 ---
 
-## 📊 Example Output Summary
+## 📊 Output Summary
+<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/729d648e-2f97-4f36-b7fb-93ec15962905" />
 
-From a sample run:
+From a run:
 
 - **Total IPs Analyzed:** 10  
 - **Blocked IPs:** 3  
