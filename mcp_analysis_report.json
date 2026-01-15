@@ -1,0 +1,282 @@
+{
+  "total_ips_analyzed": 10,
+  "blocked_ips": 3,
+  "accepted_ips": 7,
+  "average_risk_score": 34.0,
+  "high_confidence_decisions": 5,
+  "medium_confidence_decisions": 0,
+  "low_confidence_decisions": 5,
+  "timestamp": "2026-01-08T12:34:12.246368",
+  "decisions": [
+    {
+      "ip_address": "222.80.2.127",
+      "timestamp": "2026-01-08T12:34:10.111090",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Brute Force Attack"
+          ],
+          "countries": [
+            "Ukraine"
+          ],
+          "targeted_ports": [
+            443
+          ],
+          "latest_activity": "Oct 07, 2025 08:57:29PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "Low",
+      "reasoning": "Rule-based decision: 1 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 0.0%.",
+      "risk_score": 60,
+      "recommendation": "Add IP to watchlist. Enable enhanced logging for this source."
+    },
+    {
+      "ip_address": "231.48.235.13",
+      "timestamp": "2026-01-08T12:34:10.314131",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Brute Force Attack"
+          ],
+          "countries": [
+            "Turkey"
+          ],
+          "targeted_ports": [
+            8724
+          ],
+          "latest_activity": "Dec 08, 2025 07:41:53AM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "High",
+      "reasoning": "Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.",
+      "risk_score": 0,
+      "recommendation": "Accept traffic. IP shows legitimate behavior patterns."
+    },
+    {
+      "ip_address": "233.250.59.173",
+      "timestamp": "2026-01-08T12:34:10.559794",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "./git/ access"
+          ],
+          "countries": [
+            "United Kingdom"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Dec 21, 2025 05:17:00AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "Low",
+      "reasoning": "Rule-based decision: 1 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 0.0%.",
+      "risk_score": 60,
+      "recommendation": "Add IP to watchlist. Enable enhanced logging for this source."
+    },
+    {
+      "ip_address": "241.37.221.185",
+      "timestamp": "2026-01-08T12:34:10.822936",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "SQL Injection Attempt"
+          ],
+          "countries": [
+            "France"
+          ],
+          "targeted_ports": [
+            8724
+          ],
+          "latest_activity": "Nov 04, 2025 10:25:14PM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "High",
+      "reasoning": "Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.",
+      "risk_score": 0,
+      "recommendation": "Accept traffic. IP shows legitimate behavior patterns."
+    },
+    {
+      "ip_address": "157.160.243.122",
+      "timestamp": "2026-01-08T12:34:11.071945",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Illegal File Type"
+          ],
+          "countries": [
+            "China"
+          ],
+          "targeted_ports": [
+            8080
+          ],
+          "latest_activity": "Oct 02, 2025 12:02:00AM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "Low",
+      "reasoning": "Rule-based decision: 0 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 100.0%.",
+      "risk_score": 40,
+      "recommendation": "Accept with caution. Review manually if patterns change."
+    },
+    {
+      "ip_address": "95.46.198.70",
+      "timestamp": "2026-01-08T12:34:11.277040",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Path Traversal"
+          ],
+          "countries": [
+            "Canada"
+          ],
+          "targeted_ports": [
+            2929
+          ],
+          "latest_activity": "Oct 23, 2025 08:34:54PM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "High",
+      "reasoning": "Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.",
+      "risk_score": 0,
+      "recommendation": "Accept traffic. IP shows legitimate behavior patterns."
+    },
+    {
+      "ip_address": "254.9.71.116",
+      "timestamp": "2026-01-08T12:34:11.430535",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Path Traversal"
+          ],
+          "countries": [
+            "South Korea"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Oct 17, 2025 10:04:46AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "Rule-based decision: 1 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 100.0%.",
+      "risk_score": 100,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "228.95.70.111",
+      "timestamp": "2026-01-08T12:34:11.729056",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "./git/ access"
+          ],
+          "countries": [
+            "United States"
+          ],
+          "targeted_ports": [
+            21
+          ],
+          "latest_activity": "Oct 07, 2025 01:33:00PM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "High",
+      "reasoning": "Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.",
+      "risk_score": 0,
+      "recommendation": "Accept traffic. IP shows legitimate behavior patterns."
+    },
+    {
+      "ip_address": "101.77.248.243",
+      "timestamp": "2026-01-08T12:34:11.912253",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 1,
+          "threat_types": [
+            "CSRF Attack"
+          ],
+          "countries": [
+            "Italy"
+          ],
+          "targeted_ports": [
+            1433
+          ],
+          "latest_activity": "Nov 28, 2025 05:31:20AM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "Low",
+      "reasoning": "Rule-based decision: 0 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 100.0%.",
+      "risk_score": 40,
+      "recommendation": "Accept with caution. Review manually if patterns change."
+    },
+    {
+      "ip_address": "234.127.214.192",
+      "timestamp": "2026-01-08T12:34:12.246101",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Evasion Technique Detected"
+          ],
+          "countries": [
+            "South Korea"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Nov 01, 2025 01:04:47AM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "Low",
+      "reasoning": "Rule-based decision: 0 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 100.0%.",
+      "risk_score": 40,
+      "recommendation": "Accept with caution. Review manually if patterns change."
+    }
+  ]
+}

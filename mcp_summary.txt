@@ -1,0 +1,55 @@
+======================================================================
+MCP-SIEM ANALYSIS SUMMARY
+======================================================================
+
+Analysis Date: 2026-01-08T12:34:12.246368
+Total IPs Analyzed: 10
+Blocked: 3 (30.0%)
+Accepted: 7 (70.0%)
+Average Risk Score: 34.0/100
+High Confidence: 5
+
+----------------------------------------------------------------------
+DETAILED RESULTS:
+----------------------------------------------------------------------
+
+1. 222.80.2.127
+   Decision: BLOCK | Confidence: Low | Risk: 60/100
+   Rule-based decision: 1 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 0.0%.
+
+2. 231.48.235.13
+   Decision: ACCEPT | Confidence: High | Risk: 0/100
+   Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.
+
+3. 233.250.59.173
+   Decision: BLOCK | Confidence: Low | Risk: 60/100
+   Rule-based decision: 1 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 0.0%.
+
+4. 241.37.221.185
+   Decision: ACCEPT | Confidence: High | Risk: 0/100
+   Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.
+
+5. 157.160.243.122
+   Decision: ACCEPT | Confidence: Low | Risk: 40/100
+   Rule-based decision: 0 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 100.0%.
+
+6. 95.46.198.70
+   Decision: ACCEPT | Confidence: High | Risk: 0/100
+   Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.
+
+7. 254.9.71.116
+   Decision: BLOCK | Confidence: High | Risk: 100/100
+   Rule-based decision: 1 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 100.0%.
+
+8. 228.95.70.111
+   Decision: ACCEPT | Confidence: High | Risk: 0/100
+   Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.
+
+9. 101.77.248.243
+   Decision: ACCEPT | Confidence: Low | Risk: 40/100
+   Rule-based decision: 0 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 100.0%.
+
+10. 234.127.214.192
+   Decision: ACCEPT | Confidence: Low | Risk: 40/100
+   Rule-based decision: 0 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 100.0%.
+
