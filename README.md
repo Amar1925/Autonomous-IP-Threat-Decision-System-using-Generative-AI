@@ -60,12 +60,43 @@ This project implements an **Autonomous MCP Server** that:
 
 ---
 
-## ⚙️ System Architecture
+## ⚙️ System Architecture & Workflow
 
-<p align="center">
-  <img src="workflow_diagram.png" width="700"/>
-</p>
+```mermaid
+flowchart TD
+    A[Start Analysis] --> B[Load Security Events]
+    B --> C[Build IP Context History]
+    C --> D[Select Target IP]
 
+    D --> E{Calculate Risk Indicators}
+    E --> E1[Block Rate]
+    E --> E2[Fail Rate]
+    E --> E3[Threat Types]
+
+    E1 --> F[Risk Factors]
+    E2 --> F
+    E3 --> F
+
+    F --> G[Construct AI Prompt]
+    G --> H{Call Gemini API}
+
+    H -->|Success| I[Parse JSON Response]
+    I -->|Valid JSON| J[Extract AI Decision]
+    I -->|Invalid Format| K[Trigger Fallback Logic]
+
+    H -->|Error / Timeout| K
+    K --> L[Calculate Weighted Risk Score]
+    L --> J
+
+    J --> M[Generate Recommendation]
+    M --> N[Log Result]
+
+    N --> O{More IPs?}
+    O -->|Yes| D
+    O -->|No| P[Generate Final JSON Report]
+    P --> Q[End]
+
+```
 
 ---
 
@@ -123,6 +154,10 @@ Each IP decision includes:
 - Risk score
 - Human-readable explanation
 - Recommended security action
+
+Output in MCPsummary.txt
+<img width="1106" height="951" alt="image" src="https://github.com/user-attachments/assets/3bbec6d0-0e29-4011-90e0-3c909c9285ae" />
+
 
 ---
 
