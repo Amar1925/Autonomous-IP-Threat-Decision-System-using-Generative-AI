@@ -61,7 +61,7 @@ This project implements an **Autonomous MCP Server** that:
 ---
 
 ## ⚙️ System Architecture
-
+![Workflow Diagram](/workflow_diagram.png)
 
 
 
