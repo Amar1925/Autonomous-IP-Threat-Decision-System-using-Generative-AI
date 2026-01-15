@@ -315,7 +315,7 @@ def main():
     EXCEL_FILE = "security_events_3000.xlsx"
     
     # Get API key from environment variable or hardcode (not recommended)
-    GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyByt7ZZDcfch9n_AouSXqvLma2aBY0CVFU')
+    GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'YOUR_GEMINI_API_HERE')
     
     if GEMINI_API_KEY == 'YOUR_GEMINI_API_KEY_HERE':
         print("=" * 70)
@@ -437,4 +437,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
