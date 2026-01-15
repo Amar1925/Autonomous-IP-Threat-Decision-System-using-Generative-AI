@@ -81,6 +81,8 @@ Reports (JSON / TXT)
 
 - `mcpserver.py`  
   Core MCP Server that performs IP context building, AI analysis, fallback logic, and reporting.
+  
+> Note: Replace with your gemini API key where it says YOUR_GEMINI_API_KEY_HERE
 
 - `security_events_3000.xlsx`  
   Sample SIEM-like dataset containing attack logs.
