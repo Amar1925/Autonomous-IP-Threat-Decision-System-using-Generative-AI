@@ -2,54 +2,414 @@
 MCP-SIEM ANALYSIS SUMMARY
 ======================================================================
 
-Analysis Date: 2026-01-08T12:34:12.246368
-Total IPs Analyzed: 10
-Blocked: 3 (30.0%)
-Accepted: 7 (70.0%)
-Average Risk Score: 34.0/100
-High Confidence: 5
+Analysis Date: 2026-04-02T17:24:10.864343
+Total IPs Analyzed: 100
+Blocked: 88 (88.0%)
+Accepted: 12 (12.0%)
+Average Risk Score: 77.4/100
+High Confidence: 87
 
 ----------------------------------------------------------------------
 DETAILED RESULTS:
 ----------------------------------------------------------------------
 
 1. 222.80.2.127
-   Decision: BLOCK | Confidence: Low | Risk: 60/100
-   Rule-based decision: 1 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 0.0%.
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a brute force attack attempt targeting port 443, originating from a high-risk country, and has already been blocked once.
 
 2. 231.48.235.13
-   Decision: ACCEPT | Confidence: High | Risk: 0/100
-   Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with a successful brute force attack attempt, which is a significant security threat.
 
 3. 233.250.59.173
-   Decision: BLOCK | Confidence: Low | Risk: 60/100
-   Rule-based decision: 1 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 0.0%.
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address attempted unauthorized access to a sensitive directory and targeted a critical port (22), indicating potential malicious intent.
 
 4. 241.37.221.185
-   Decision: ACCEPT | Confidence: High | Risk: 0/100
-   Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in an SQL Injection Attempt, which is a high-risk threat type, despite having only one event recorded.
 
 5. 157.160.243.122
-   Decision: ACCEPT | Confidence: Low | Risk: 40/100
-   Rule-based decision: 0 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 100.0%.
+   Decision: BLOCK | Confidence: Medium | Risk: 65/100
+   The IP address has attempted to access a service using an illegal file type from a high-risk country, China, targeting a common port (8080). Although there was only one failed attempt, the nature of the threat warrants caution.
 
 6. 95.46.198.70
-   Decision: ACCEPT | Confidence: High | Risk: 0/100
-   Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a successful path traversal attack, which is a serious security threat, despite having only one event. The nature of the threat justifies blocking the IP to prevent potential exploitation.
 
 7. 254.9.71.116
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted a path traversal attack on port 22, which is a critical port, and the attempt was denied. Given the nature of the threat and the fact that it originated from a foreign country, it poses a significant risk.
+
+8. 228.95.70.111
+   Decision: ACCEPT | Confidence: Medium | Risk: 30/100
+   The IP address has only one event with no blocked or failed attempts, and the threat type is a low-risk ./git/ access attempt on a non-critical port.
+
+9. 101.77.248.243
+   Decision: ACCEPT | Confidence: Medium | Risk: 30/100
+   The IP address has only one failed attempt with a CSRF attack and no history of blocked attempts, indicating a low threat level.
+
+10. 234.127.214.192
+   Decision: ACCEPT | Confidence: Medium | Risk: 30/100
+   The IP address has only one failed attempt with an evasion technique detected, but no blocked attempts or successful breaches. The risk is low given the limited activity.
+
+11. 157.236.206.232
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a CSRF attack attempt targeting a sensitive port (3306) and has a history of blocked attempts, indicating malicious intent.
+
+12. 35.219.246.112
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has a blocked attempt due to HTTP protocol compliance failure targeting port 53, which is unusual for HTTP traffic and indicates potential malicious activity.
+
+13. 205.23.6.2
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted an illegal method and has been blocked previously, indicating malicious intent.
+
+14. 113.158.208.243
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has a successful report from a high-risk country targeting a known vulnerable port (445), indicating potential malicious activity.
+
+15. 190.186.159.124
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a DDoS attack attempt targeting a common database port, which is a high-risk activity, and originates from a country with a history of cyber threats.
+
+16. 38.239.165.210
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with a buffer overflow threat targeting port 22, which is commonly used for SSH. Despite only one event, the nature of the threat warrants precautionary blocking.
+
+17. 46.27.245.195
    Decision: BLOCK | Confidence: High | Risk: 100/100
    Rule-based decision: 1 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 100.0%.
 
-8. 228.95.70.111
-   Decision: ACCEPT | Confidence: High | Risk: 0/100
-   Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.
+18. 176.237.66.142
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been associated with malware activity and has a blocked attempt recorded, indicating a high risk of malicious intent.
 
-9. 101.77.248.243
-   Decision: ACCEPT | Confidence: Low | Risk: 40/100
-   Rule-based decision: 0 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 100.0%.
+19. 165.246.76.181
+   Decision: ACCEPT | Confidence: Medium | Risk: 40/100
+   The IP address has only one event with no blocked or failed attempts, and the action was passed. However, the presence of an unauthorized access attempt on a sensitive port warrants caution.
 
-10. 234.127.214.192
-   Decision: ACCEPT | Confidence: Low | Risk: 40/100
-   Rule-based decision: 0 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 100.0%.
+20. 33.144.56.11
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has a successful report of malicious activity with a blocked attempt and a recent event indicating a threat type of 'Successful Report'.
+
+21. 182.117.176.44
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a blocked attempt using an illegal method targeting port 21, which is commonly associated with FTP services. The presence of a threat type 'Illegal Method' and the action being denied indicates malicious intent.
+
+22. 11.184.142.212
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with a Buffer Overflow threat type, which is a serious security risk, and it has targeted a specific port. Despite having only one event, the nature of the threat warrants a precautionary block.
+
+23. 206.89.14.174
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a Zero Day Exploit attempt targeting port 25, which is commonly used for email services, indicating a potential threat despite only one failed attempt.
+
+24. 40.77.242.59
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in ransomware activity with a blocked attempt targeting a sensitive port (3306), indicating a high risk of malicious intent.
+
+25. 237.23.77.231
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted a command injection attack, which is a high-risk threat, and the attempt was blocked. Given the nature of the threat and the fact that it originated from a foreign country, it is prudent to block this IP.
+
+26. 250.49.156.119
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with a successful brute force attack attempt on port 22, indicating a high risk of unauthorized access.
+
+27. 170.60.59.16
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been associated with malware activity targeting port 22 from a high-risk country, Iran, despite having only one event.
+
+28. 82.13.77.8
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a buffer overflow attack attempt, which is a serious threat type, and has been blocked previously. The activity originated from a high-risk country and targeted a critical port.
+
+29. 110.174.60.23
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in an illegal file type attempt from a high-risk country targeting a sensitive port (3389), indicating potential malicious intent.
+
+30. 190.94.175.3
+   Decision: BLOCK | Confidence: High | Risk: 75/100
+   The IP address has been involved in port scanning activities, which is a common precursor to more serious attacks. Despite having only one event, the nature of the activity justifies a precautionary block.
+
+31. 225.165.205.4
+   Decision: ACCEPT | Confidence: Medium | Risk: 40/100
+   The IP address has only one failed attempt with no previous blocked attempts, and the threat type is not highly critical. However, the presence of an illegal file type attempt warrants caution.
+
+32. 124.207.134.50
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted an SQL Injection, which is a high-risk threat, and it targeted a common database port (1433).
+
+33. 73.191.222.255
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a DDoS attack attempt with a blocked outcome, indicating malicious intent. The risk of allowing this IP is high due to its recent activity.
+
+34. 255.13.80.48
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in an evasion technique detected from China, targeting port 443, with a blocked attempt recorded. This indicates a potential threat.
+
+35. 252.221.104.95
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a command injection attempt, which is a high-risk threat type, and there is a history of blocked attempts.
+
+36. 75.87.127.40
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has a history of blocked attempts and is associated with illegal file type threats targeting a sensitive port (3306).
+
+37. 187.59.159.13
+   Decision: ACCEPT | Confidence: Medium | Risk: 20/100
+   The IP address has only one event with a minor threat type and no history of blocked or failed attempts, indicating a low risk profile.
+
+38. 181.213.160.107
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has a history of blocked attempts and is associated with HTTP protocol compliance failures from a high-risk country, indicating potential malicious activity.
+
+39. 150.152.92.118
+   Decision: ACCEPT | Confidence: High | Risk: 20/100
+   The IP address has only one event with no blocked or failed attempts, and the threat type is related to geo-blocking which may not be relevant for this source country.
+
+40. 164.47.134.115
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a blocked attempt with a threat type of Geo Turkey Blocking, originating from Brazil, targeting port 80, which indicates potential malicious intent.
+
+41. 73.83.67.48
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted unauthorized access and originates from a country with a history of similar threats. The targeted port 53 is critical for DNS services, increasing the risk.
+
+42. 200.214.190.34
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted a buffer overflow attack from a high-risk country, targeting a sensitive port (3389) with a failed attempt, indicating malicious intent.
+
+43. 185.202.4.241
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with ransomware activity, which poses a significant threat. Despite only one event, the nature of the threat warrants blocking.
+
+44. 248.248.97.20
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted a command injection attack, which is a serious threat, and originates from a country with known cyber threats. The blocked attempt on a non-standard port further increases the risk.
+
+45. 40.67.185.125
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a Zero Day Exploit attempt, which is a high-risk threat, and has a history of blocked and failed attempts targeting a critical port (443).
+
+46. 193.3.95.222
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in port scanning activity, which is a common reconnaissance technique used by attackers. The source country and the nature of the threat increase the risk level.
+
+47. 74.209.49.242
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a malware detection event, which poses a significant security risk despite the low number of events.
+
+48. 158.57.252.88
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a CSRF attack attempt targeting a sensitive port (3389), and the activity was recently denied. The presence of a blocked attempt and the nature of the threat indicate a high risk.
+
+49. 214.14.137.162
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a successful XSS attack attempt, which is a significant security threat, and it has a history of being blocked.
+
+50. 158.102.217.49
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a command injection attempt, which is a serious threat type, originating from a high-risk country. Despite only one failed attempt, the nature of the threat warrants precautionary blocking.
+
+51. 23.102.13.15
+   Decision: ACCEPT | Confidence: High | Risk: 10/100
+   The IP address has only one failed attempt to access a non-critical path and no history of blocked attempts, indicating low risk.
+
+52. 201.131.33.33
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a blocked attempt from a high-risk country, targeting a critical port with a threat type indicating geo-blocking concerns.
+
+53. 178.142.197.132
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in an evasion technique detected event targeting port 3389, which is commonly used for RDP, and has been blocked previously.
+
+54. 239.122.194.154
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in an SQL Injection Attempt targeting port 22, which is a critical security threat. Despite only one event, the nature of the threat warrants immediate blocking.
+
+55. 30.126.150.152
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a command injection attempt targeting port 445, which is commonly exploited for malicious activities. Despite only one event, the nature of the threat warrants a precautionary block.
+
+56. 134.249.71.181
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a path traversal attempt, which is a serious threat type, and has been blocked previously. The activity is recent and targeted a specific port.
+
+57. 210.137.213.84
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted a buffer overflow attack on a known vulnerable port (1433) and has a history of failed and blocked attempts, indicating malicious intent.
+
+58. 189.108.204.70
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in an SQL Injection Attempt, which is a serious threat type, originating from a country with potential risk factors. Despite only one event, the nature of the threat warrants precautionary blocking.
+
+59. 121.31.220.119
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a successful CSRF attack attempt targeting a sensitive port (445), and there is a history of blocked attempts.
+
+60. 165.83.218.71
+   Decision: ACCEPT | Confidence: Medium | Risk: 30/100
+   The IP address has only one failed attempt with a CSRF attack and no history of blocked attempts, suggesting a low threat level. However, vigilance is advised due to the nature of the threat.
+
+61. 170.173.231.223
+   Decision: ACCEPT | Confidence: Medium | Risk: 30/100
+   The IP address has only one failed attempt with no successful attacks and no blocked attempts. The risk is low due to the single event and lack of repeated malicious activity.
+
+62. 108.131.65.125
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in an evasion technique attempt and has been blocked once. The activity originates from a high-risk country and targets a common port for web services.
+
+63. 64.107.192.121
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a successful buffer overflow attack targeting port 443, originating from a high-risk country with a recent event indicating malicious activity.
+
+64. 93.61.67.207
+   Decision: BLOCK | Confidence: Medium | Risk: 60/100
+   The IP address has been involved in port scanning activity, which is often indicative of reconnaissance behavior. Although there are no blocked or failed attempts, the nature of the threat warrants precaution.
+
+65. 235.137.224.21
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a CSRF attack attempt with a failed outcome and is associated with a blocked attempt, indicating malicious intent.
+
+66. 116.215.184.237
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a successful SQL Injection attempt, which is a high-risk threat type, despite having only one event recorded.
+
+67. 174.134.234.155
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with DNS Tunneling, a known threat type, targeting port 3389, which is commonly used for RDP and can be exploited for unauthorized access.
+
+68. 95.5.13.164
+   Decision: BLOCK | Confidence: High | Risk: 75/100
+   The IP address has engaged in port scanning activity targeting port 22, which is commonly associated with SSH brute force attempts. Despite only one event, the nature of the activity suggests potential malicious intent.
+
+69. 4.229.73.46
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted a buffer overflow attack on a known vulnerable port (1433) and originates from a foreign country. The presence of blocked and failed attempts increases the risk.
+
+70. 158.57.83.80
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted a command injection attack, which is a high-risk threat, and it targeted a sensitive port (25) with a failed attempt. Given the nature of the threat and the recent activity, it poses a significant risk.
+
+71. 64.43.41.67
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted an illegal method from a high-risk country and has been denied access, indicating malicious intent.
+
+72. 211.100.7.15
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with a CSRF attack that successfully targeted port 443, indicating malicious intent despite the low number of events.
+
+73. 67.158.223.175
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in an XSS attack targeting a sensitive port (3389), indicating malicious intent despite the low number of events.
+
+74. 65.172.118.255
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with DNS Tunneling, a known threat type, targeting port 3306, which is commonly used for databases. Despite only one event, the nature of the threat justifies blocking.
+
+75. 41.221.117.227
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a command injection attempt, which is a high-risk threat type, and the event was successful. Despite only one event, the nature of the threat warrants blocking.
+
+76. 73.70.94.130
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted an SQL Injection from Russia targeting port 1433, which is commonly used for database services, indicating a potential threat.
+
+77. 17.74.10.152
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a CSRF attack attempt from a high-risk country and targeted a sensitive port, indicating malicious intent.
+
+78. 204.204.158.44
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with DNS Tunneling, a known threat type, and has successfully executed an event. Despite having only one event, the nature of the threat justifies a block.
+
+79. 9.76.228.191
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted a CSRF attack targeting port 21, with a history of blocked and failed attempts, indicating malicious intent.
+
+80. 7.80.200.37
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in DNS Tunneling, a known malicious activity, and has a blocked attempt on a sensitive port (21).
+
+81. 233.77.227.193
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a buffer overflow attack, which is a serious threat, and there was a successful block action taken. The targeting of port 22, commonly used for SSH, further increases the risk.
+
+82. 136.162.77.119
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a successful CSRF attack targeting port 25, which is commonly associated with email services, indicating a potential threat to network security.
+
+83. 174.255.38.188
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in an evasion technique, targeting a critical port (53) with a failed attempt, indicating potential malicious intent.
+
+84. 43.244.102.217
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with a DDoS attack attempt, which was blocked, and it targeted a common web port (80). Given the nature of the threat and its potential impact, it is prudent to block this IP.
+
+85. 151.165.238.175
+   Decision: ACCEPT | Confidence: Medium | Risk: 30/100
+   The IP address has only one event with an evasion technique detected and no blocked or failed attempts, suggesting a low immediate threat level.
+
+86. 222.109.15.104
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with ransomware activity, which poses a significant threat. Despite only one event, the nature of the threat warrants precautionary blocking.
+
+87. 171.15.166.76
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has a history of blocked and failed attempts, originates from a high-risk country, and is associated with a threat type indicating geo-blocking. These factors suggest a high likelihood of malicious intent.
+
+88. 243.142.91.111
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a SQL Injection Attempt, which is a high-risk threat, and there has been a blocked attempt recorded.
+
+89. 76.152.136.82
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in ransomware activity with a blocked attempt and failed attempt, originating from a high-risk country targeting a critical port.
+
+90. 25.236.178.50
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with ransomware activity targeting port 22, originating from a high-risk country, Nigeria, despite the low number of events.
+
+91. 158.128.6.236
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with malware activity from Russia, targeting a specific port with a successful outcome, indicating a high risk of malicious intent.
+
+92. 193.15.65.240
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been associated with malware activity, which poses a significant threat to network security despite only one event being recorded.
+
+93. 75.246.50.112
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a command injection attempt targeting port 53, which is a critical DNS service port, and has a history of blocked attempts.
+
+94. 124.242.26.208
+   Decision: BLOCK | Confidence: Medium | Risk: 65/100
+   The IP address is associated with a CSRF attack targeting port 3389, which is commonly used for remote desktop services, posing a potential security risk.
+
+95. 197.201.177.233
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in a Zero Day Exploit originating from a high-risk country, Iran, targeting port 8080, with a successful outcome recorded. This indicates a high potential threat.
+
+96. 144.174.174.190
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has been involved in an XSS attack attempt targeting port 22, which was blocked. The presence of a threat type and a blocked attempt indicates malicious intent.
+
+97. 136.200.235.102
+   Decision: BLOCK | Confidence: High | Risk: 75/100
+   The IP address has been involved in port scanning activity targeting port 22, which is commonly used for SSH and can indicate an attempt to find vulnerabilities. Despite only one event, the nature of the threat type justifies blocking.
+
+98. 123.73.131.198
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address has attempted a buffer overflow attack targeting port 3389, which is commonly used for RDP and is a high-risk service. The source country and nature of the threat increase the risk level.
+
+99. 169.137.15.68
+   Decision: BLOCK | Confidence: High | Risk: 85/100
+   The IP address is associated with DNS Tunneling, a known threat type, despite having only one event. This indicates potential malicious activity.
+
+100. 228.248.26.40
+   Decision: ACCEPT | Confidence: Medium | Risk: 30/100
+   The IP address has only one event with a non-critical threat type and no blocked or failed attempts, suggesting low immediate risk.
 
