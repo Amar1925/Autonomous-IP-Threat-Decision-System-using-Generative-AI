@@ -2,13 +2,12 @@
 MCP Server for Autonomous IP Security Decision Making
 Complete Full Implementation
 Integrates with SIEM systems to provide AI-powered threat analysis
-Updated for new Google Genai API
+Updated for OpenAI API
 """
 
 import pandas as pd
 import json
-from google import genai
-from google.genai import types
+from openai import OpenAI
 from datetime import datetime
 from typing import Dict, List, Any
 import logging
@@ -29,14 +28,14 @@ class MCPSecurityServer:
     Analyzes security events and makes autonomous block/accept decisions
     """
     
-    def __init__(self, excel_file: str, gemini_api_key: str):
+    def __init__(self, excel_file: str, openai_api_key: str):
         """Initialize the MCP server with data source and AI model"""
         self.excel_file = excel_file
         self.data = None
         self.ip_context = defaultdict(list)
         
-        # Configure Gemini AI with new API
-        self.client = genai.Client(api_key=gemini_api_key)
+        # Configure OpenAI client
+        self.client = OpenAI(api_key=openai_api_key)
         
         logger.info("MCP Security Server initialized")
     
@@ -100,7 +99,7 @@ class MCPSecurityServer:
         }
     
     def analyze_with_ai(self, ip_context: Dict[str, Any]) -> Dict[str, Any]:
-        """Use Gemini AI to analyze IP context and make decision"""
+        """Use OpenAI to analyze IP context and make decision"""
         
         # Prepare prompt for AI analysis
         prompt = f"""You are a cybersecurity AI assistant analyzing network traffic. Based on the following IP address context, determine if this IP should be BLOCKED or ACCEPTED.
@@ -130,21 +129,30 @@ Analyze this data and provide your response ONLY as a valid JSON object with the
 Do not include any markdown formatting, backticks, or additional text. Only return the JSON object."""
         
         try:
-            # Use new Gemini API
-            response = self.client.models.generate_content(
-                model='gemini-2.0-flash-exp',
-                contents=prompt
+            # Use OpenAI Chat Completions API
+            response = self.client.chat.completions.create(
+                model="gpt-4o",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are a cybersecurity expert. Always respond with valid JSON only, no markdown or extra text."
+                    },
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                temperature=0.2,
+                max_tokens=300
             )
             
-            result_text = response.text.strip()
+            result_text = response.choices[0].message.content.strip()
             
-            # Clean up the response
+            # Clean up the response just in case
             if '```json' in result_text:
                 result_text = result_text.split('```json')[1].split('```')[0].strip()
             elif '```' in result_text:
                 result_text = result_text.split('```')[1].split('```')[0].strip()
-            
-            # Remove any remaining markdown or extra characters
             result_text = result_text.replace('```', '').strip()
             
             analysis = json.loads(result_text)
@@ -176,7 +184,6 @@ Do not include any markdown formatting, backticks, or additional text. Only retu
         total = ip_context['total_events']
         
         if total > 0:
-            # Weighted calculation
             block_rate = (blocked / total) * 100
             fail_rate = (failed / total) * 100
             risk_score = (block_rate * 0.6 + fail_rate * 0.4)
@@ -190,7 +197,11 @@ Do not include any markdown formatting, backticks, or additional text. Only retu
         else:
             confidence = "Low"
         
-        reasoning = f"Rule-based decision: {blocked} blocked attempts and {failed} failed attempts out of {total} total events. Block rate: {(blocked/total*100 if total > 0 else 0):.1f}%. Failed rate: {(failed/total*100 if total > 0 else 0):.1f}%."
+        reasoning = (
+            f"Rule-based decision: {blocked} blocked attempts and {failed} failed attempts "
+            f"out of {total} total events. Block rate: {(blocked/total*100 if total > 0 else 0):.1f}%. "
+            f"Failed rate: {(failed/total*100 if total > 0 else 0):.1f}%."
+        )
         
         return {
             "decision": decision,
@@ -203,13 +214,9 @@ Do not include any markdown formatting, backticks, or additional text. Only retu
         """Main method to process an IP and make decision"""
         logger.info(f"Processing IP: {ip_address}")
         
-        # Get context
         context = self.get_ip_context(ip_address)
-        
-        # Analyze with AI
         decision = self.analyze_with_ai(context)
         
-        # Prepare final response
         response = {
             'ip_address': ip_address,
             'timestamp': datetime.now().isoformat(),
@@ -314,31 +321,22 @@ def main():
     # Configuration
     EXCEL_FILE = "security_events_3000.xlsx"
     
-    # Get API key from environment variable or hardcode (not recommended)
-    GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'YOUR_GEMINI_API_HERE')
-    
-    if GEMINI_API_KEY == 'YOUR_GEMINI_API_KEY_HERE':
-        print("=" * 70)
-        print("ERROR: Please set your Gemini API key!")
-        print("=" * 70)
-        print("\nOption 1 - Environment Variable (Recommended):")
-        print("  export GEMINI_API_KEY='your_key_here'")
-        print("\nOption 2 - Edit this file:")
-        print("  Replace 'YOUR_GEMINI_API_KEY_HERE' with your actual key")
-        print("\nGet your API key from: https://aistudio.google.com/apikey")
-        print("=" * 70)
-        return
+    # OpenAI API Key
+    OPENAI_API_KEY = os.getenv(
+        'OPENAI_API_KEY',
+        'sk-proj-YOUR API KEY HERE'
+    )
     
     print("=" * 70)
     print("MCP SERVER - Autonomous IP Security Decision System")
     print("=" * 70)
     print(f"Excel File: {EXCEL_FILE}")
-    print(f"API Key: {GEMINI_API_KEY[:10]}...{GEMINI_API_KEY[-4:]}")
+    print(f"API Key: {OPENAI_API_KEY[:10]}...{OPENAI_API_KEY[-4:]}")
     print("=" * 70)
     
     # Initialize server
     try:
-        server = MCPSecurityServer(EXCEL_FILE, GEMINI_API_KEY)
+        server = MCPSecurityServer(EXCEL_FILE, OPENAI_API_KEY)
     except Exception as e:
         print(f"Error initializing server: {e}")
         return
@@ -358,7 +356,7 @@ def main():
     print(f"  Date Range: {stats['date_range']['start']} to {stats['date_range']['end']}")
     
     # Get sample IPs to analyze
-    sample_ips = list(server.ip_context.keys())[:10]
+    sample_ips = list(server.ip_context.keys())[:100]
     
     print(f"\nAnalyzing {len(sample_ips)} sample IPs...")
     print("=" * 70)
@@ -437,5 +435,4 @@ def main():
 
 
 if __name__ == "__main__":
-
     main()
