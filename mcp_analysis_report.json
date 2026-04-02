@@ -1,16 +1,16 @@
 {
-  "total_ips_analyzed": 10,
-  "blocked_ips": 3,
-  "accepted_ips": 7,
-  "average_risk_score": 34.0,
-  "high_confidence_decisions": 5,
-  "medium_confidence_decisions": 0,
-  "low_confidence_decisions": 5,
-  "timestamp": "2026-01-08T12:34:12.246368",
+  "total_ips_analyzed": 100,
+  "blocked_ips": 88,
+  "accepted_ips": 12,
+  "average_risk_score": 77.4,
+  "high_confidence_decisions": 87,
+  "medium_confidence_decisions": 13,
+  "low_confidence_decisions": 0,
+  "timestamp": "2026-04-02T17:24:10.864343",
   "decisions": [
     {
       "ip_address": "222.80.2.127",
-      "timestamp": "2026-01-08T12:34:10.111090",
+      "timestamp": "2026-04-02T17:21:39.938536",
       "context": {
         "total_events": 1,
         "risk_indicators": {
@@ -30,14 +30,14 @@
         }
       },
       "decision": "BLOCK",
-      "confidence": "Low",
-      "reasoning": "Rule-based decision: 1 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 0.0%.",
-      "risk_score": 60,
-      "recommendation": "Add IP to watchlist. Enable enhanced logging for this source."
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a brute force attack attempt targeting port 443, originating from a high-risk country, and has already been blocked once.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
     },
     {
       "ip_address": "231.48.235.13",
-      "timestamp": "2026-01-08T12:34:10.314131",
+      "timestamp": "2026-04-02T17:21:41.894325",
       "context": {
         "total_events": 1,
         "risk_indicators": {
@@ -56,15 +56,15 @@
           "latest_activity": "Dec 08, 2025 07:41:53AM"
         }
       },
-      "decision": "ACCEPT",
+      "decision": "BLOCK",
       "confidence": "High",
-      "reasoning": "Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.",
-      "risk_score": 0,
-      "recommendation": "Accept traffic. IP shows legitimate behavior patterns."
+      "reasoning": "The IP address is associated with a successful brute force attack attempt, which is a significant security threat.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
     },
     {
       "ip_address": "233.250.59.173",
-      "timestamp": "2026-01-08T12:34:10.559794",
+      "timestamp": "2026-04-02T17:21:43.200433",
       "context": {
         "total_events": 1,
         "risk_indicators": {
@@ -84,14 +84,14 @@
         }
       },
       "decision": "BLOCK",
-      "confidence": "Low",
-      "reasoning": "Rule-based decision: 1 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 0.0%.",
-      "risk_score": 60,
-      "recommendation": "Add IP to watchlist. Enable enhanced logging for this source."
+      "confidence": "High",
+      "reasoning": "The IP address attempted unauthorized access to a sensitive directory and targeted a critical port (22), indicating potential malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
     },
     {
       "ip_address": "241.37.221.185",
-      "timestamp": "2026-01-08T12:34:10.822936",
+      "timestamp": "2026-04-02T17:21:45.529726",
       "context": {
         "total_events": 1,
         "risk_indicators": {
@@ -110,15 +110,15 @@
           "latest_activity": "Nov 04, 2025 10:25:14PM"
         }
       },
-      "decision": "ACCEPT",
+      "decision": "BLOCK",
       "confidence": "High",
-      "reasoning": "Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.",
-      "risk_score": 0,
-      "recommendation": "Accept traffic. IP shows legitimate behavior patterns."
+      "reasoning": "The IP address has been involved in an SQL Injection Attempt, which is a high-risk threat type, despite having only one event recorded.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
     },
     {
       "ip_address": "157.160.243.122",
-      "timestamp": "2026-01-08T12:34:11.071945",
+      "timestamp": "2026-04-02T17:21:47.705971",
       "context": {
         "total_events": 1,
         "risk_indicators": {
@@ -137,15 +137,15 @@
           "latest_activity": "Oct 02, 2025 12:02:00AM"
         }
       },
-      "decision": "ACCEPT",
-      "confidence": "Low",
-      "reasoning": "Rule-based decision: 0 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 100.0%.",
-      "risk_score": 40,
-      "recommendation": "Accept with caution. Review manually if patterns change."
+      "decision": "BLOCK",
+      "confidence": "Medium",
+      "reasoning": "The IP address has attempted to access a service using an illegal file type from a high-risk country, China, targeting a common port (8080). Although there was only one failed attempt, the nature of the threat warrants caution.",
+      "risk_score": 65,
+      "recommendation": "Block IP temporarily. Monitor for 24 hours before permanent action."
     },
     {
       "ip_address": "95.46.198.70",
-      "timestamp": "2026-01-08T12:34:11.277040",
+      "timestamp": "2026-04-02T17:21:49.342585",
       "context": {
         "total_events": 1,
         "risk_indicators": {
@@ -164,15 +164,15 @@
           "latest_activity": "Oct 23, 2025 08:34:54PM"
         }
       },
-      "decision": "ACCEPT",
+      "decision": "BLOCK",
       "confidence": "High",
-      "reasoning": "Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.",
-      "risk_score": 0,
-      "recommendation": "Accept traffic. IP shows legitimate behavior patterns."
+      "reasoning": "The IP address has been involved in a successful path traversal attack, which is a serious security threat, despite having only one event. The nature of the threat justifies blocking the IP to prevent potential exploitation.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
     },
     {
       "ip_address": "254.9.71.116",
-      "timestamp": "2026-01-08T12:34:11.430535",
+      "timestamp": "2026-04-02T17:21:50.495940",
       "context": {
         "total_events": 1,
         "risk_indicators": {
@@ -193,13 +193,13 @@
       },
       "decision": "BLOCK",
       "confidence": "High",
-      "reasoning": "Rule-based decision: 1 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 100.0%.",
-      "risk_score": 100,
+      "reasoning": "The IP address has attempted a path traversal attack on port 22, which is a critical port, and the attempt was denied. Given the nature of the threat and the fact that it originated from a foreign country, it poses a significant risk.",
+      "risk_score": 85,
       "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
     },
     {
       "ip_address": "228.95.70.111",
-      "timestamp": "2026-01-08T12:34:11.729056",
+      "timestamp": "2026-04-02T17:21:53.029910",
       "context": {
         "total_events": 1,
         "risk_indicators": {
@@ -219,14 +219,14 @@
         }
       },
       "decision": "ACCEPT",
-      "confidence": "High",
-      "reasoning": "Rule-based decision: 0 blocked attempts and 0 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 0.0%.",
-      "risk_score": 0,
-      "recommendation": "Accept traffic. IP shows legitimate behavior patterns."
+      "confidence": "Medium",
+      "reasoning": "The IP address has only one event with no blocked or failed attempts, and the threat type is a low-risk ./git/ access attempt on a non-critical port.",
+      "risk_score": 30,
+      "recommendation": "Accept but monitor. Enable rate limiting for this IP."
     },
     {
       "ip_address": "101.77.248.243",
-      "timestamp": "2026-01-08T12:34:11.912253",
+      "timestamp": "2026-04-02T17:21:54.304911",
       "context": {
         "total_events": 1,
         "risk_indicators": {
@@ -246,14 +246,14 @@
         }
       },
       "decision": "ACCEPT",
-      "confidence": "Low",
-      "reasoning": "Rule-based decision: 0 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 100.0%.",
-      "risk_score": 40,
-      "recommendation": "Accept with caution. Review manually if patterns change."
+      "confidence": "Medium",
+      "reasoning": "The IP address has only one failed attempt with a CSRF attack and no history of blocked attempts, indicating a low threat level.",
+      "risk_score": 30,
+      "recommendation": "Accept but monitor. Enable rate limiting for this IP."
     },
     {
       "ip_address": "234.127.214.192",
-      "timestamp": "2026-01-08T12:34:12.246101",
+      "timestamp": "2026-04-02T17:21:55.391587",
       "context": {
         "total_events": 1,
         "risk_indicators": {
@@ -273,10 +273,2440 @@
         }
       },
       "decision": "ACCEPT",
-      "confidence": "Low",
-      "reasoning": "Rule-based decision: 0 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 0.0%. Failed rate: 100.0%.",
+      "confidence": "Medium",
+      "reasoning": "The IP address has only one failed attempt with an evasion technique detected, but no blocked attempts or successful breaches. The risk is low given the limited activity.",
+      "risk_score": 30,
+      "recommendation": "Accept but monitor. Enable rate limiting for this IP."
+    },
+    {
+      "ip_address": "157.236.206.232",
+      "timestamp": "2026-04-02T17:21:56.509455",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "CSRF Attack"
+          ],
+          "countries": [
+            "Netherlands"
+          ],
+          "targeted_ports": [
+            3306
+          ],
+          "latest_activity": "Dec 27, 2025 02:40:19AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a CSRF attack attempt targeting a sensitive port (3306) and has a history of blocked attempts, indicating malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "35.219.246.112",
+      "timestamp": "2026-04-02T17:21:57.878441",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "HTTP protocol compliance failed"
+          ],
+          "countries": [
+            "Germany"
+          ],
+          "targeted_ports": [
+            53
+          ],
+          "latest_activity": "Nov 30, 2025 02:52:59AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has a blocked attempt due to HTTP protocol compliance failure targeting port 53, which is unusual for HTTP traffic and indicates potential malicious activity.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "205.23.6.2",
+      "timestamp": "2026-04-02T17:21:59.007981",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Illegal Method"
+          ],
+          "countries": [
+            "Spain"
+          ],
+          "targeted_ports": [
+            8724
+          ],
+          "latest_activity": "Oct 10, 2025 08:15:40AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted an illegal method and has been blocked previously, indicating malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "113.158.208.243",
+      "timestamp": "2026-04-02T17:22:00.127692",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Successful Report"
+          ],
+          "countries": [
+            "Iran"
+          ],
+          "targeted_ports": [
+            445
+          ],
+          "latest_activity": "Nov 11, 2025 03:04:22PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has a successful report from a high-risk country targeting a known vulnerable port (445), indicating potential malicious activity.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "190.186.159.124",
+      "timestamp": "2026-04-02T17:22:02.351715",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "DDoS Attack"
+          ],
+          "countries": [
+            "Brazil"
+          ],
+          "targeted_ports": [
+            1433
+          ],
+          "latest_activity": "Dec 15, 2025 03:46:30PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a DDoS attack attempt targeting a common database port, which is a high-risk activity, and originates from a country with a history of cyber threats.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "38.239.165.210",
+      "timestamp": "2026-04-02T17:22:03.684030",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Buffer Overflow"
+          ],
+          "countries": [
+            "Italy"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Dec 28, 2025 12:51:51AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with a buffer overflow threat targeting port 22, which is commonly used for SSH. Despite only one event, the nature of the threat warrants precautionary blocking.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "46.27.245.195",
+      "timestamp": "2026-04-02T17:22:06.470821",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Path Traversal"
+          ],
+          "countries": [
+            "Italy"
+          ],
+          "targeted_ports": [
+            25
+          ],
+          "latest_activity": "Oct 12, 2025 10:56:53AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "Rule-based decision: 1 blocked attempts and 1 failed attempts out of 1 total events. Block rate: 100.0%. Failed rate: 100.0%.",
+      "risk_score": 100,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "176.237.66.142",
+      "timestamp": "2026-04-02T17:22:07.533329",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Malware Detected"
+          ],
+          "countries": [
+            "Australia"
+          ],
+          "targeted_ports": [
+            7979
+          ],
+          "latest_activity": "Oct 01, 2025 07:38:33AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been associated with malware activity and has a blocked attempt recorded, indicating a high risk of malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "165.246.76.181",
+      "timestamp": "2026-04-02T17:22:08.889073",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Unauthorized Access"
+          ],
+          "countries": [
+            "France"
+          ],
+          "targeted_ports": [
+            445
+          ],
+          "latest_activity": "Dec 24, 2025 03:58:40PM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "Medium",
+      "reasoning": "The IP address has only one event with no blocked or failed attempts, and the action was passed. However, the presence of an unauthorized access attempt on a sensitive port warrants caution.",
       "risk_score": 40,
-      "recommendation": "Accept with caution. Review manually if patterns change."
+      "recommendation": "Accept but monitor. Enable rate limiting for this IP."
+    },
+    {
+      "ip_address": "33.144.56.11",
+      "timestamp": "2026-04-02T17:22:10.127246",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Successful Report"
+          ],
+          "countries": [
+            "Australia"
+          ],
+          "targeted_ports": [
+            8080
+          ],
+          "latest_activity": "Nov 03, 2025 02:50:03AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has a successful report of malicious activity with a blocked attempt and a recent event indicating a threat type of 'Successful Report'.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "182.117.176.44",
+      "timestamp": "2026-04-02T17:22:11.567936",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Illegal Method"
+          ],
+          "countries": [
+            "Japan"
+          ],
+          "targeted_ports": [
+            21
+          ],
+          "latest_activity": "Nov 13, 2025 11:51:38PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a blocked attempt using an illegal method targeting port 21, which is commonly associated with FTP services. The presence of a threat type 'Illegal Method' and the action being denied indicates malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "11.184.142.212",
+      "timestamp": "2026-04-02T17:22:13.228574",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Buffer Overflow"
+          ],
+          "countries": [
+            "Turkey"
+          ],
+          "targeted_ports": [
+            2929
+          ],
+          "latest_activity": "Dec 26, 2025 06:43:27PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with a Buffer Overflow threat type, which is a serious security risk, and it has targeted a specific port. Despite having only one event, the nature of the threat warrants a precautionary block.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "206.89.14.174",
+      "timestamp": "2026-04-02T17:22:14.633949",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Zero Day Exploit"
+          ],
+          "countries": [
+            "India"
+          ],
+          "targeted_ports": [
+            25
+          ],
+          "latest_activity": "Dec 29, 2025 03:09:26PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a Zero Day Exploit attempt targeting port 25, which is commonly used for email services, indicating a potential threat despite only one failed attempt.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "40.77.242.59",
+      "timestamp": "2026-04-02T17:22:15.665960",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Ransomware Activity"
+          ],
+          "countries": [
+            "Brazil"
+          ],
+          "targeted_ports": [
+            3306
+          ],
+          "latest_activity": "Nov 09, 2025 01:05:00AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in ransomware activity with a blocked attempt targeting a sensitive port (3306), indicating a high risk of malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "237.23.77.231",
+      "timestamp": "2026-04-02T17:22:16.991267",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Command Injection"
+          ],
+          "countries": [
+            "Ukraine"
+          ],
+          "targeted_ports": [
+            8080
+          ],
+          "latest_activity": "Nov 02, 2025 06:03:02AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted a command injection attack, which is a high-risk threat, and the attempt was blocked. Given the nature of the threat and the fact that it originated from a foreign country, it is prudent to block this IP.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "250.49.156.119",
+      "timestamp": "2026-04-02T17:22:18.211442",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Brute Force Attack"
+          ],
+          "countries": [
+            "Brazil"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Nov 24, 2025 04:22:55AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with a successful brute force attack attempt on port 22, indicating a high risk of unauthorized access.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "170.60.59.16",
+      "timestamp": "2026-04-02T17:22:19.448478",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Malware Detected"
+          ],
+          "countries": [
+            "Iran"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Oct 02, 2025 02:41:35PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been associated with malware activity targeting port 22 from a high-risk country, Iran, despite having only one event.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "82.13.77.8",
+      "timestamp": "2026-04-02T17:22:20.850395",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Buffer Overflow"
+          ],
+          "countries": [
+            "Pakistan"
+          ],
+          "targeted_ports": [
+            53
+          ],
+          "latest_activity": "Nov 27, 2025 07:55:20AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a buffer overflow attack attempt, which is a serious threat type, and has been blocked previously. The activity originated from a high-risk country and targeted a critical port.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "110.174.60.23",
+      "timestamp": "2026-04-02T17:22:22.211941",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Illegal File Type"
+          ],
+          "countries": [
+            "Iran"
+          ],
+          "targeted_ports": [
+            3389
+          ],
+          "latest_activity": "Dec 28, 2025 08:19:25AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in an illegal file type attempt from a high-risk country targeting a sensitive port (3389), indicating potential malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "190.94.175.3",
+      "timestamp": "2026-04-02T17:22:23.650724",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Port Scanning"
+          ],
+          "countries": [
+            "Ukraine"
+          ],
+          "targeted_ports": [
+            2929
+          ],
+          "latest_activity": "Nov 07, 2025 01:14:31PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in port scanning activities, which is a common precursor to more serious attacks. Despite having only one event, the nature of the activity justifies a precautionary block.",
+      "risk_score": 75,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "225.165.205.4",
+      "timestamp": "2026-04-02T17:22:26.153332",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Illegal File Type"
+          ],
+          "countries": [
+            "Ukraine"
+          ],
+          "targeted_ports": [
+            7979
+          ],
+          "latest_activity": "Dec 19, 2025 05:08:32AM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "Medium",
+      "reasoning": "The IP address has only one failed attempt with no previous blocked attempts, and the threat type is not highly critical. However, the presence of an illegal file type attempt warrants caution.",
+      "risk_score": 40,
+      "recommendation": "Accept but monitor. Enable rate limiting for this IP."
+    },
+    {
+      "ip_address": "124.207.134.50",
+      "timestamp": "2026-04-02T17:22:27.641915",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "SQL Injection Attempt"
+          ],
+          "countries": [
+            "United Kingdom"
+          ],
+          "targeted_ports": [
+            1433
+          ],
+          "latest_activity": "Nov 09, 2025 09:13:25AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted an SQL Injection, which is a high-risk threat, and it targeted a common database port (1433).",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "73.191.222.255",
+      "timestamp": "2026-04-02T17:22:28.989699",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "DDoS Attack"
+          ],
+          "countries": [
+            "United Kingdom"
+          ],
+          "targeted_ports": [
+            8724
+          ],
+          "latest_activity": "Dec 21, 2025 10:10:22AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a DDoS attack attempt with a blocked outcome, indicating malicious intent. The risk of allowing this IP is high due to its recent activity.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "255.13.80.48",
+      "timestamp": "2026-04-02T17:22:30.203968",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Evasion Technique Detected"
+          ],
+          "countries": [
+            "China"
+          ],
+          "targeted_ports": [
+            443
+          ],
+          "latest_activity": "Oct 10, 2025 03:12:51AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in an evasion technique detected from China, targeting port 443, with a blocked attempt recorded. This indicates a potential threat.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "252.221.104.95",
+      "timestamp": "2026-04-02T17:22:31.521970",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Command Injection"
+          ],
+          "countries": [
+            "United Kingdom"
+          ],
+          "targeted_ports": [
+            443
+          ],
+          "latest_activity": "Dec 21, 2025 04:02:00PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a command injection attempt, which is a high-risk threat type, and there is a history of blocked attempts.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "75.87.127.40",
+      "timestamp": "2026-04-02T17:22:32.871565",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Illegal File Type"
+          ],
+          "countries": [
+            "Brazil"
+          ],
+          "targeted_ports": [
+            3306
+          ],
+          "latest_activity": "Dec 15, 2025 04:50:02PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has a history of blocked attempts and is associated with illegal file type threats targeting a sensitive port (3306).",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "187.59.159.13",
+      "timestamp": "2026-04-02T17:22:33.992576",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "HTTP protocol compliance failed"
+          ],
+          "countries": [
+            "Turkey"
+          ],
+          "targeted_ports": [
+            3306
+          ],
+          "latest_activity": "Dec 26, 2025 01:52:01AM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "Medium",
+      "reasoning": "The IP address has only one event with a minor threat type and no history of blocked or failed attempts, indicating a low risk profile.",
+      "risk_score": 20,
+      "recommendation": "Accept but monitor. Enable rate limiting for this IP."
+    },
+    {
+      "ip_address": "181.213.160.107",
+      "timestamp": "2026-04-02T17:22:35.059855",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "HTTP protocol compliance failed"
+          ],
+          "countries": [
+            "Ukraine"
+          ],
+          "targeted_ports": [
+            2929
+          ],
+          "latest_activity": "Dec 29, 2025 08:34:13PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has a history of blocked attempts and is associated with HTTP protocol compliance failures from a high-risk country, indicating potential malicious activity.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "150.152.92.118",
+      "timestamp": "2026-04-02T17:22:36.242006",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Geo Turkey Blocking"
+          ],
+          "countries": [
+            "United Kingdom"
+          ],
+          "targeted_ports": [
+            8724
+          ],
+          "latest_activity": "Dec 21, 2025 11:20:38PM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "High",
+      "reasoning": "The IP address has only one event with no blocked or failed attempts, and the threat type is related to geo-blocking which may not be relevant for this source country.",
+      "risk_score": 20,
+      "recommendation": "Accept traffic. IP shows legitimate behavior patterns."
+    },
+    {
+      "ip_address": "164.47.134.115",
+      "timestamp": "2026-04-02T17:22:37.579214",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Geo Turkey Blocking"
+          ],
+          "countries": [
+            "Brazil"
+          ],
+          "targeted_ports": [
+            80
+          ],
+          "latest_activity": "Dec 15, 2025 04:18:53PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a blocked attempt with a threat type of Geo Turkey Blocking, originating from Brazil, targeting port 80, which indicates potential malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "73.83.67.48",
+      "timestamp": "2026-04-02T17:22:38.845787",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Unauthorized Access"
+          ],
+          "countries": [
+            "Turkey"
+          ],
+          "targeted_ports": [
+            53
+          ],
+          "latest_activity": "Nov 10, 2025 10:28:37AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted unauthorized access and originates from a country with a history of similar threats. The targeted port 53 is critical for DNS services, increasing the risk.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "200.214.190.34",
+      "timestamp": "2026-04-02T17:22:40.242169",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Buffer Overflow"
+          ],
+          "countries": [
+            "Nigeria"
+          ],
+          "targeted_ports": [
+            3389
+          ],
+          "latest_activity": "Dec 27, 2025 01:50:28PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted a buffer overflow attack from a high-risk country, targeting a sensitive port (3389) with a failed attempt, indicating malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "185.202.4.241",
+      "timestamp": "2026-04-02T17:22:41.260104",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Ransomware Activity"
+          ],
+          "countries": [
+            "Ukraine"
+          ],
+          "targeted_ports": [
+            443
+          ],
+          "latest_activity": "Oct 17, 2025 03:50:54PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with ransomware activity, which poses a significant threat. Despite only one event, the nature of the threat warrants blocking.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "248.248.97.20",
+      "timestamp": "2026-04-02T17:22:42.494920",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Command Injection"
+          ],
+          "countries": [
+            "Pakistan"
+          ],
+          "targeted_ports": [
+            7979
+          ],
+          "latest_activity": "Oct 01, 2025 01:25:26PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted a command injection attack, which is a serious threat, and originates from a country with known cyber threats. The blocked attempt on a non-standard port further increases the risk.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "40.67.185.125",
+      "timestamp": "2026-04-02T17:22:44.028437",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Zero Day Exploit"
+          ],
+          "countries": [
+            "France"
+          ],
+          "targeted_ports": [
+            443
+          ],
+          "latest_activity": "Nov 05, 2025 08:13:42AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a Zero Day Exploit attempt, which is a high-risk threat, and has a history of blocked and failed attempts targeting a critical port (443).",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "193.3.95.222",
+      "timestamp": "2026-04-02T17:22:45.760872",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Port Scanning"
+          ],
+          "countries": [
+            "Nigeria"
+          ],
+          "targeted_ports": [
+            2929
+          ],
+          "latest_activity": "Nov 23, 2025 03:48:25PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in port scanning activity, which is a common reconnaissance technique used by attackers. The source country and the nature of the threat increase the risk level.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "74.209.49.242",
+      "timestamp": "2026-04-02T17:22:47.308456",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Malware Detected"
+          ],
+          "countries": [
+            "Switzerland"
+          ],
+          "targeted_ports": [
+            2929
+          ],
+          "latest_activity": "Nov 07, 2025 06:46:12AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a malware detection event, which poses a significant security risk despite the low number of events.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "158.57.252.88",
+      "timestamp": "2026-04-02T17:22:48.811867",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "CSRF Attack"
+          ],
+          "countries": [
+            "Italy"
+          ],
+          "targeted_ports": [
+            3389
+          ],
+          "latest_activity": "Dec 22, 2025 02:34:42PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a CSRF attack attempt targeting a sensitive port (3389), and the activity was recently denied. The presence of a blocked attempt and the nature of the threat indicate a high risk.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "214.14.137.162",
+      "timestamp": "2026-04-02T17:22:50.273440",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "XSS Attack Detected"
+          ],
+          "countries": [
+            "United Kingdom"
+          ],
+          "targeted_ports": [
+            2929
+          ],
+          "latest_activity": "Nov 12, 2025 03:47:01AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a successful XSS attack attempt, which is a significant security threat, and it has a history of being blocked.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "158.102.217.49",
+      "timestamp": "2026-04-02T17:22:51.371603",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Command Injection"
+          ],
+          "countries": [
+            "Nigeria"
+          ],
+          "targeted_ports": [
+            8724
+          ],
+          "latest_activity": "Dec 09, 2025 02:40:23PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a command injection attempt, which is a serious threat type, originating from a high-risk country. Despite only one failed attempt, the nature of the threat warrants precautionary blocking.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "23.102.13.15",
+      "timestamp": "2026-04-02T17:22:53.966280",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 1,
+          "threat_types": [
+            "./git/ access"
+          ],
+          "countries": [
+            "Bangladesh"
+          ],
+          "targeted_ports": [
+            443
+          ],
+          "latest_activity": "Dec 24, 2025 08:49:19PM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "High",
+      "reasoning": "The IP address has only one failed attempt to access a non-critical path and no history of blocked attempts, indicating low risk.",
+      "risk_score": 10,
+      "recommendation": "Accept traffic. IP shows legitimate behavior patterns."
+    },
+    {
+      "ip_address": "201.131.33.33",
+      "timestamp": "2026-04-02T17:22:55.188296",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Geo Turkey Blocking"
+          ],
+          "countries": [
+            "China"
+          ],
+          "targeted_ports": [
+            53
+          ],
+          "latest_activity": "Nov 24, 2025 01:03:49AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a blocked attempt from a high-risk country, targeting a critical port with a threat type indicating geo-blocking concerns.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "178.142.197.132",
+      "timestamp": "2026-04-02T17:22:56.784822",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Evasion Technique Detected"
+          ],
+          "countries": [
+            "France"
+          ],
+          "targeted_ports": [
+            3389
+          ],
+          "latest_activity": "Nov 08, 2025 04:57:46AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in an evasion technique detected event targeting port 3389, which is commonly used for RDP, and has been blocked previously.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "239.122.194.154",
+      "timestamp": "2026-04-02T17:22:58.042451",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "SQL Injection Attempt"
+          ],
+          "countries": [
+            "Japan"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Nov 19, 2025 11:52:17PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in an SQL Injection Attempt targeting port 22, which is a critical security threat. Despite only one event, the nature of the threat warrants immediate blocking.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "30.126.150.152",
+      "timestamp": "2026-04-02T17:22:59.389954",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Command Injection"
+          ],
+          "countries": [
+            "Ukraine"
+          ],
+          "targeted_ports": [
+            445
+          ],
+          "latest_activity": "Nov 02, 2025 01:17:54AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a command injection attempt targeting port 445, which is commonly exploited for malicious activities. Despite only one event, the nature of the threat warrants a precautionary block.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "134.249.71.181",
+      "timestamp": "2026-04-02T17:23:00.531623",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Path Traversal"
+          ],
+          "countries": [
+            "Brazil"
+          ],
+          "targeted_ports": [
+            2929
+          ],
+          "latest_activity": "Nov 15, 2025 12:17:14PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a path traversal attempt, which is a serious threat type, and has been blocked previously. The activity is recent and targeted a specific port.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "210.137.213.84",
+      "timestamp": "2026-04-02T17:23:01.852076",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Buffer Overflow"
+          ],
+          "countries": [
+            "Switzerland"
+          ],
+          "targeted_ports": [
+            1433
+          ],
+          "latest_activity": "Oct 02, 2025 01:28:00PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted a buffer overflow attack on a known vulnerable port (1433) and has a history of failed and blocked attempts, indicating malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "189.108.204.70",
+      "timestamp": "2026-04-02T17:23:03.570858",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "SQL Injection Attempt"
+          ],
+          "countries": [
+            "Pakistan"
+          ],
+          "targeted_ports": [
+            8724
+          ],
+          "latest_activity": "Nov 19, 2025 06:23:28AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in an SQL Injection Attempt, which is a serious threat type, originating from a country with potential risk factors. Despite only one event, the nature of the threat warrants precautionary blocking.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "121.31.220.119",
+      "timestamp": "2026-04-02T17:23:04.941198",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "CSRF Attack"
+          ],
+          "countries": [
+            "Japan"
+          ],
+          "targeted_ports": [
+            445
+          ],
+          "latest_activity": "Dec 03, 2025 04:51:51PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a successful CSRF attack attempt targeting a sensitive port (445), and there is a history of blocked attempts.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "165.83.218.71",
+      "timestamp": "2026-04-02T17:23:08.096846",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 1,
+          "threat_types": [
+            "CSRF Attack"
+          ],
+          "countries": [
+            "South Korea"
+          ],
+          "targeted_ports": [
+            443
+          ],
+          "latest_activity": "Dec 16, 2025 03:52:16PM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "Medium",
+      "reasoning": "The IP address has only one failed attempt with a CSRF attack and no history of blocked attempts, suggesting a low threat level. However, vigilance is advised due to the nature of the threat.",
+      "risk_score": 30,
+      "recommendation": "Accept but monitor. Enable rate limiting for this IP."
+    },
+    {
+      "ip_address": "170.173.231.223",
+      "timestamp": "2026-04-02T17:23:10.012163",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 1,
+          "threat_types": [
+            "CSRF Attack"
+          ],
+          "countries": [
+            "Ukraine"
+          ],
+          "targeted_ports": [
+            80
+          ],
+          "latest_activity": "Nov 30, 2025 01:16:20AM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "Medium",
+      "reasoning": "The IP address has only one failed attempt with no successful attacks and no blocked attempts. The risk is low due to the single event and lack of repeated malicious activity.",
+      "risk_score": 30,
+      "recommendation": "Accept but monitor. Enable rate limiting for this IP."
+    },
+    {
+      "ip_address": "108.131.65.125",
+      "timestamp": "2026-04-02T17:23:11.366823",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Evasion Technique Detected"
+          ],
+          "countries": [
+            "Ukraine"
+          ],
+          "targeted_ports": [
+            8080
+          ],
+          "latest_activity": "Dec 12, 2025 01:28:02AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in an evasion technique attempt and has been blocked once. The activity originates from a high-risk country and targets a common port for web services.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "64.107.192.121",
+      "timestamp": "2026-04-02T17:23:12.597408",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Buffer Overflow"
+          ],
+          "countries": [
+            "Nigeria"
+          ],
+          "targeted_ports": [
+            443
+          ],
+          "latest_activity": "Dec 30, 2025 08:07:15AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a successful buffer overflow attack targeting port 443, originating from a high-risk country with a recent event indicating malicious activity.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "93.61.67.207",
+      "timestamp": "2026-04-02T17:23:14.136769",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Port Scanning"
+          ],
+          "countries": [
+            "Canada"
+          ],
+          "targeted_ports": [
+            445
+          ],
+          "latest_activity": "Oct 06, 2025 05:02:15AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "Medium",
+      "reasoning": "The IP address has been involved in port scanning activity, which is often indicative of reconnaissance behavior. Although there are no blocked or failed attempts, the nature of the threat warrants precaution.",
+      "risk_score": 60,
+      "recommendation": "Block IP temporarily. Monitor for 24 hours before permanent action."
+    },
+    {
+      "ip_address": "235.137.224.21",
+      "timestamp": "2026-04-02T17:23:15.465240",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "CSRF Attack"
+          ],
+          "countries": [
+            "Brazil"
+          ],
+          "targeted_ports": [
+            2929
+          ],
+          "latest_activity": "Dec 03, 2025 12:50:02AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a CSRF attack attempt with a failed outcome and is associated with a blocked attempt, indicating malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "116.215.184.237",
+      "timestamp": "2026-04-02T17:23:16.587193",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "SQL Injection Attempt"
+          ],
+          "countries": [
+            "South Korea"
+          ],
+          "targeted_ports": [
+            2929
+          ],
+          "latest_activity": "Dec 07, 2025 12:17:57AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a successful SQL Injection attempt, which is a high-risk threat type, despite having only one event recorded.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "174.134.234.155",
+      "timestamp": "2026-04-02T17:23:17.924611",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "DNS Tunneling"
+          ],
+          "countries": [
+            "Australia"
+          ],
+          "targeted_ports": [
+            3389
+          ],
+          "latest_activity": "Dec 21, 2025 02:22:01AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with DNS Tunneling, a known threat type, targeting port 3389, which is commonly used for RDP and can be exploited for unauthorized access.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "95.5.13.164",
+      "timestamp": "2026-04-02T17:23:19.331430",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Port Scanning"
+          ],
+          "countries": [
+            "Pakistan"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Nov 18, 2025 10:00:32PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has engaged in port scanning activity targeting port 22, which is commonly associated with SSH brute force attempts. Despite only one event, the nature of the activity suggests potential malicious intent.",
+      "risk_score": 75,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "4.229.73.46",
+      "timestamp": "2026-04-02T17:23:20.631831",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Buffer Overflow"
+          ],
+          "countries": [
+            "France"
+          ],
+          "targeted_ports": [
+            1433
+          ],
+          "latest_activity": "Nov 07, 2025 10:15:14PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted a buffer overflow attack on a known vulnerable port (1433) and originates from a foreign country. The presence of blocked and failed attempts increases the risk.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "158.57.83.80",
+      "timestamp": "2026-04-02T17:23:22.122722",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Command Injection"
+          ],
+          "countries": [
+            "India"
+          ],
+          "targeted_ports": [
+            25
+          ],
+          "latest_activity": "Dec 06, 2025 08:05:37AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted a command injection attack, which is a high-risk threat, and it targeted a sensitive port (25) with a failed attempt. Given the nature of the threat and the recent activity, it poses a significant risk.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "64.43.41.67",
+      "timestamp": "2026-04-02T17:23:23.963561",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Illegal Method"
+          ],
+          "countries": [
+            "Turkey"
+          ],
+          "targeted_ports": [
+            8080
+          ],
+          "latest_activity": "Dec 07, 2025 02:58:04PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted an illegal method from a high-risk country and has been denied access, indicating malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "211.100.7.15",
+      "timestamp": "2026-04-02T17:23:25.058063",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "CSRF Attack"
+          ],
+          "countries": [
+            "Germany"
+          ],
+          "targeted_ports": [
+            443
+          ],
+          "latest_activity": "Oct 07, 2025 04:08:05AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with a CSRF attack that successfully targeted port 443, indicating malicious intent despite the low number of events.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "67.158.223.175",
+      "timestamp": "2026-04-02T17:23:27.549476",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "XSS Attack Detected"
+          ],
+          "countries": [
+            "Australia"
+          ],
+          "targeted_ports": [
+            3389
+          ],
+          "latest_activity": "Nov 21, 2025 07:38:02AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in an XSS attack targeting a sensitive port (3389), indicating malicious intent despite the low number of events.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "65.172.118.255",
+      "timestamp": "2026-04-02T17:23:30.739659",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "DNS Tunneling"
+          ],
+          "countries": [
+            "Australia"
+          ],
+          "targeted_ports": [
+            3306
+          ],
+          "latest_activity": "Oct 07, 2025 06:00:42PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with DNS Tunneling, a known threat type, targeting port 3306, which is commonly used for databases. Despite only one event, the nature of the threat justifies blocking.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "41.221.117.227",
+      "timestamp": "2026-04-02T17:23:32.162043",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Command Injection"
+          ],
+          "countries": [
+            "United States"
+          ],
+          "targeted_ports": [
+            25
+          ],
+          "latest_activity": "Nov 02, 2025 05:16:22PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a command injection attempt, which is a high-risk threat type, and the event was successful. Despite only one event, the nature of the threat warrants blocking.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "73.70.94.130",
+      "timestamp": "2026-04-02T17:23:33.283881",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 1,
+          "threat_types": [
+            "SQL Injection Attempt"
+          ],
+          "countries": [
+            "Russia"
+          ],
+          "targeted_ports": [
+            1433
+          ],
+          "latest_activity": "Dec 22, 2025 12:20:00AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted an SQL Injection from Russia targeting port 1433, which is commonly used for database services, indicating a potential threat.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "17.74.10.152",
+      "timestamp": "2026-04-02T17:23:34.619613",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "CSRF Attack"
+          ],
+          "countries": [
+            "Nigeria"
+          ],
+          "targeted_ports": [
+            445
+          ],
+          "latest_activity": "Dec 14, 2025 04:20:14PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a CSRF attack attempt from a high-risk country and targeted a sensitive port, indicating malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "204.204.158.44",
+      "timestamp": "2026-04-02T17:23:35.788252",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "DNS Tunneling"
+          ],
+          "countries": [
+            "Germany"
+          ],
+          "targeted_ports": [
+            443
+          ],
+          "latest_activity": "Dec 09, 2025 03:55:07AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with DNS Tunneling, a known threat type, and has successfully executed an event. Despite having only one event, the nature of the threat justifies a block.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "9.76.228.191",
+      "timestamp": "2026-04-02T17:23:37.412199",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "CSRF Attack"
+          ],
+          "countries": [
+            "Australia"
+          ],
+          "targeted_ports": [
+            21
+          ],
+          "latest_activity": "Dec 01, 2025 07:06:15AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted a CSRF attack targeting port 21, with a history of blocked and failed attempts, indicating malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "7.80.200.37",
+      "timestamp": "2026-04-02T17:23:38.909132",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "DNS Tunneling"
+          ],
+          "countries": [
+            "Australia"
+          ],
+          "targeted_ports": [
+            21
+          ],
+          "latest_activity": "Nov 26, 2025 01:41:54PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in DNS Tunneling, a known malicious activity, and has a blocked attempt on a sensitive port (21).",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "233.77.227.193",
+      "timestamp": "2026-04-02T17:23:40.637212",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Buffer Overflow"
+          ],
+          "countries": [
+            "South Korea"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Dec 03, 2025 06:34:46AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a buffer overflow attack, which is a serious threat, and there was a successful block action taken. The targeting of port 22, commonly used for SSH, further increases the risk.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "136.162.77.119",
+      "timestamp": "2026-04-02T17:23:41.798026",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "CSRF Attack"
+          ],
+          "countries": [
+            "Pakistan"
+          ],
+          "targeted_ports": [
+            25
+          ],
+          "latest_activity": "Dec 05, 2025 09:18:17PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a successful CSRF attack targeting port 25, which is commonly associated with email services, indicating a potential threat to network security.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "174.255.38.188",
+      "timestamp": "2026-04-02T17:23:43.532462",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Evasion Technique Detected"
+          ],
+          "countries": [
+            "Germany"
+          ],
+          "targeted_ports": [
+            53
+          ],
+          "latest_activity": "Dec 14, 2025 12:19:27PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in an evasion technique, targeting a critical port (53) with a failed attempt, indicating potential malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "43.244.102.217",
+      "timestamp": "2026-04-02T17:23:45.166099",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "DDoS Attack"
+          ],
+          "countries": [
+            "Japan"
+          ],
+          "targeted_ports": [
+            80
+          ],
+          "latest_activity": "Dec 01, 2025 02:00:08PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with a DDoS attack attempt, which was blocked, and it targeted a common web port (80). Given the nature of the threat and its potential impact, it is prudent to block this IP.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "151.165.238.175",
+      "timestamp": "2026-04-02T17:23:46.634650",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Evasion Technique Detected"
+          ],
+          "countries": [
+            "Switzerland"
+          ],
+          "targeted_ports": [
+            7979
+          ],
+          "latest_activity": "Oct 11, 2025 01:34:40PM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "Medium",
+      "reasoning": "The IP address has only one event with an evasion technique detected and no blocked or failed attempts, suggesting a low immediate threat level.",
+      "risk_score": 30,
+      "recommendation": "Accept but monitor. Enable rate limiting for this IP."
+    },
+    {
+      "ip_address": "222.109.15.104",
+      "timestamp": "2026-04-02T17:23:47.828811",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Ransomware Activity"
+          ],
+          "countries": [
+            "Japan"
+          ],
+          "targeted_ports": [
+            53
+          ],
+          "latest_activity": "Dec 19, 2025 01:42:50PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with ransomware activity, which poses a significant threat. Despite only one event, the nature of the threat warrants precautionary blocking.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "171.15.166.76",
+      "timestamp": "2026-04-02T17:23:48.871303",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Geo Turkey Blocking"
+          ],
+          "countries": [
+            "China"
+          ],
+          "targeted_ports": [
+            8724
+          ],
+          "latest_activity": "Dec 02, 2025 05:15:56PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has a history of blocked and failed attempts, originates from a high-risk country, and is associated with a threat type indicating geo-blocking. These factors suggest a high likelihood of malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "243.142.91.111",
+      "timestamp": "2026-04-02T17:23:51.027744",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "SQL Injection Attempt"
+          ],
+          "countries": [
+            "Germany"
+          ],
+          "targeted_ports": [
+            7979
+          ],
+          "latest_activity": "Oct 10, 2025 09:04:20AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a SQL Injection Attempt, which is a high-risk threat, and there has been a blocked attempt recorded.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "76.152.136.82",
+      "timestamp": "2026-04-02T17:23:52.444920",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Ransomware Activity"
+          ],
+          "countries": [
+            "Pakistan"
+          ],
+          "targeted_ports": [
+            53
+          ],
+          "latest_activity": "Dec 09, 2025 12:40:16PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in ransomware activity with a blocked attempt and failed attempt, originating from a high-risk country targeting a critical port.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "25.236.178.50",
+      "timestamp": "2026-04-02T17:23:53.791985",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Ransomware Activity"
+          ],
+          "countries": [
+            "Nigeria"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Oct 31, 2025 01:52:25PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with ransomware activity targeting port 22, originating from a high-risk country, Nigeria, despite the low number of events.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "158.128.6.236",
+      "timestamp": "2026-04-02T17:23:55.620424",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Malware Detected"
+          ],
+          "countries": [
+            "Russia"
+          ],
+          "targeted_ports": [
+            7979
+          ],
+          "latest_activity": "Dec 07, 2025 08:17:23PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with malware activity from Russia, targeting a specific port with a successful outcome, indicating a high risk of malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "193.15.65.240",
+      "timestamp": "2026-04-02T17:23:56.724981",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Malware Detected"
+          ],
+          "countries": [
+            "South Korea"
+          ],
+          "targeted_ports": [
+            53
+          ],
+          "latest_activity": "Oct 23, 2025 10:29:29PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been associated with malware activity, which poses a significant threat to network security despite only one event being recorded.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "75.246.50.112",
+      "timestamp": "2026-04-02T17:23:58.593191",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Command Injection"
+          ],
+          "countries": [
+            "France"
+          ],
+          "targeted_ports": [
+            53
+          ],
+          "latest_activity": "Nov 22, 2025 11:17:34AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a command injection attempt targeting port 53, which is a critical DNS service port, and has a history of blocked attempts.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "124.242.26.208",
+      "timestamp": "2026-04-02T17:24:00.569440",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "CSRF Attack"
+          ],
+          "countries": [
+            "United States"
+          ],
+          "targeted_ports": [
+            3389
+          ],
+          "latest_activity": "Dec 23, 2025 01:45:26PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "Medium",
+      "reasoning": "The IP address is associated with a CSRF attack targeting port 3389, which is commonly used for remote desktop services, posing a potential security risk.",
+      "risk_score": 65,
+      "recommendation": "Block IP temporarily. Monitor for 24 hours before permanent action."
+    },
+    {
+      "ip_address": "197.201.177.233",
+      "timestamp": "2026-04-02T17:24:02.293171",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Zero Day Exploit"
+          ],
+          "countries": [
+            "Iran"
+          ],
+          "targeted_ports": [
+            8080
+          ],
+          "latest_activity": "Oct 13, 2025 08:18:32AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in a Zero Day Exploit originating from a high-risk country, Iran, targeting port 8080, with a successful outcome recorded. This indicates a high potential threat.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "144.174.174.190",
+      "timestamp": "2026-04-02T17:24:04.008121",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 1,
+          "failed_attempts": 0,
+          "threat_types": [
+            "XSS Attack Detected"
+          ],
+          "countries": [
+            "Netherlands"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Oct 21, 2025 03:47:03AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in an XSS attack attempt targeting port 22, which was blocked. The presence of a threat type and a blocked attempt indicates malicious intent.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "136.200.235.102",
+      "timestamp": "2026-04-02T17:24:05.349217",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "Port Scanning"
+          ],
+          "countries": [
+            "Switzerland"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Oct 25, 2025 03:48:55AM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has been involved in port scanning activity targeting port 22, which is commonly used for SSH and can indicate an attempt to find vulnerabilities. Despite only one event, the nature of the threat type justifies blocking.",
+      "risk_score": 75,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "123.73.131.198",
+      "timestamp": "2026-04-02T17:24:07.142196",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 1,
+          "threat_types": [
+            "Buffer Overflow"
+          ],
+          "countries": [
+            "Pakistan"
+          ],
+          "targeted_ports": [
+            3389
+          ],
+          "latest_activity": "Oct 31, 2025 05:12:39PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address has attempted a buffer overflow attack targeting port 3389, which is commonly used for RDP and is a high-risk service. The source country and nature of the threat increase the risk level.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "169.137.15.68",
+      "timestamp": "2026-04-02T17:24:09.649635",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "DNS Tunneling"
+          ],
+          "countries": [
+            "France"
+          ],
+          "targeted_ports": [
+            8080
+          ],
+          "latest_activity": "Dec 25, 2025 09:03:40PM"
+        }
+      },
+      "decision": "BLOCK",
+      "confidence": "High",
+      "reasoning": "The IP address is associated with DNS Tunneling, a known threat type, despite having only one event. This indicates potential malicious activity.",
+      "risk_score": 85,
+      "recommendation": "Immediately block IP at firewall level. Add to permanent blacklist."
+    },
+    {
+      "ip_address": "228.248.26.40",
+      "timestamp": "2026-04-02T17:24:10.863682",
+      "context": {
+        "total_events": 1,
+        "risk_indicators": {
+          "total_events": 1,
+          "blocked_attempts": 0,
+          "failed_attempts": 0,
+          "threat_types": [
+            "./git/ access"
+          ],
+          "countries": [
+            "United Kingdom"
+          ],
+          "targeted_ports": [
+            22
+          ],
+          "latest_activity": "Nov 14, 2025 02:57:58AM"
+        }
+      },
+      "decision": "ACCEPT",
+      "confidence": "Medium",
+      "reasoning": "The IP address has only one event with a non-critical threat type and no blocked or failed attempts, suggesting low immediate risk.",
+      "risk_score": 30,
+      "recommendation": "Accept but monitor. Enable rate limiting for this IP."
     }
   ]
 }
