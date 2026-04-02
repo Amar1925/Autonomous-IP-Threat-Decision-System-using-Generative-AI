@@ -139,15 +139,16 @@ If AI response fails or is malformed:
 ---
 
 ## 📊 Output Summary
-<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/729d648e-2f97-4f36-b7fb-93ec15962905" />
+<img width="1919" height="974" alt="image" src="https://github.com/user-attachments/assets/1633e921-7177-404d-af1e-d09e9403f478" />
+
 
 From a run:
 
-- **Total IPs Analyzed:** 10  
-- **Blocked IPs:** 3  
-- **Accepted IPs:** 7  
-- **Average Risk Score:** 34/100  
-- **High-Confidence Decisions:** 5  
+- **Total IPs Analyzed:** 100  
+- **Blocked IPs:** 88  
+- **Accepted IPs:** 12  
+- **Average Risk Score:** 77.4/100  
+- **High-Confidence Decisions:** 87  
 
 Each IP decision includes:
 - Context summary
@@ -156,7 +157,8 @@ Each IP decision includes:
 - Recommended security action
 
 Output in MCPsummary.txt
-<img width="1106" height="951" alt="image" src="https://github.com/user-attachments/assets/3bbec6d0-0e29-4011-90e0-3c909c9285ae" />
+<img width="1919" height="970" alt="image" src="https://github.com/user-attachments/assets/5528a960-1171-49ba-8d62-a1ec2a8cd5d2" />
+
 
 
 ---
