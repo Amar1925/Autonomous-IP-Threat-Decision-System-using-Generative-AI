@@ -39,7 +39,7 @@ This project implements an **Autonomous MCP Server** that:
    - Threat types
    - Source countries
    - Targeted ports
-4. **Uses Google Gemini (GenAI)** to reason like a security analyst
+4. **Uses Open AI API Key (GenAI)** to reason like a security analyst
 5. **Falls back to rule-based logic** if AI fails
 6. Produces:
    - Decision: `BLOCK` or `ACCEPT`
